@@ -1,0 +1,69 @@
+[
+    {
+        "arrangedBy": "Tekna",
+        "name": "AlphaZero - Kunstig intelligens i sjakk og go",
+        "startDate": "01-12-2021",
+        "description" : "AlphaZero viser litt av hva kunstig intelligens kan få til: Med kjennskap kun til reglene, trente AlphaZero opp seg selv (via såkalt forsterkende læring / reinforcement learning) til en unik spillforståelse i så ulike brettspill som go, shogi og sjakk. I dette gratis nettseminaret får du høre: Signe Riemer-Sørensen: Hva er reinforcement learning? Hvordan er disse algoritmene brukt i AlphaZero? Og hvorfor er det utfordrende å få slike teknikker til å fungere like godt på andre problemer? Sigurd Jakobsen: Kort intro til go. Hvorfor har datamaskiner hatt vansker med å spille go? Hvordan har spillestilen til AlphaZero og forløperne utviklet seg? Hva har dette betydd for tidligere etablerte go-sannheter? Rune Djurhuus: Hva skiller AlphaZero fra tradisjonelle sjakkmotorer som Stockfish? Hvordan er AlphaZeros spillestil og «sjakkforståelse» sammenlignet med mennesker og andre sjakkmotorer? Det vil være en fordel med basiskjennskap til maskinlæring samt spillereglene i sjakk og go.",
+        "digital": true,
+        "link": "https://www.tekna.no/kurs/alphazero--kunstig-intelligens-i-sjakk-og-go-40880/",
+        "photo": "https://www.dagbladet.no/files/2021/01/15/kode24-kunstig-intelligens-sjakk.png"
+    },
+    {
+        "arrangedBy": "Netlife",
+        "name": "Fagprat om digital produktledelse",
+        "startDate": "01-12-2021",
+        "description" : "Hvorfor går så mange store, digitale prosjekter skeis? Og hvorfor kaller vi det egentlig prosjekter, når ting vi lager skal leve lenge etter at «prosjektet» er ferdig?",
+        "digital": true,
+        "link": "https://www.netlife.com/kurs-og-konferanser/fagprat-om-digital-produktledelse",
+        "photo": "https://www.dagbladet.no/files/2021/01/15/kode24-produktledelse-1.jpg"
+
+    },
+    {
+        "arrangedBy": "Learn ML and Deep Learning in Oslo",
+        "name": "Decentralized Energy Prediction",
+        "startDate": "01-18-2021",
+        "description" : "Hvorfor går så mange store, digitale prosjekter skeis? Og hvorfor kaller vi det egentlig prosjekter, når ting vi lager skal leve lenge etter at «prosjektet» er ferdig?",
+        "digital": true,
+        "link": "https://www.meetup.com/Machine-Learning-Artificial-Intelligence/events/273250955/",
+        "photo": "https://www.dagbladet.no/files/2021/01/15/kode24-fagprat-energi-redection-1.jpeg"
+
+    },
+    {
+        "arrangedBy": "Netlife",
+        "name": "Testival: Lær (nesten) alt om brukertesting",
+        "startDate": "01-21-2021",
+        "description" : "Alle er enige om at brukertesting er lurt og viktig, men det kan føles som du er avhengig av kostbare, innleide konsulenter, dyrt utstyr, tilpassede lokaler og ekstremt god tid for å få det til. Det stemmer ikke nødvendigvis. Det finnes mange metoder du kan bruke, og ikke alle er så dyre eller omfattende.",
+        "digital": true,
+        "link": "https://www.netlife.com/kurs-og-konferanser/testival",
+        "photo": "https://www.dagbladet.no/files/2021/01/15/kode24-kalender-brukertesting-1.jpg"
+    },
+    {
+        "arrangedBy": "NAV",
+        "name": "Faglunch: Teknisk retning for NAV",
+        "startDate": "01-21-2021",
+        "description" : "De siste årene har vi i NAV IT gjort store endringer i måten vi jobber på og oppnådd gode resultater. Det har vi gjort ved å blant annet øke antall produksjonsettinger, flere faste ansatte og å jobbe i autonome og tverrfaglige team. Hvor går veien videre nå? IT-avdelingen i NAV leverer løsninger til 2.8 millioner mennesker som vi følger gjennom hele livet. For å kunne tilby brukerorienterte tjenester i ulike livsfaser, bygger vi arbeids- og velferdsløsningene for fremtiden – for deg og dine, for NAV og for samfunnet vårt. I denne digitale faglunsjen vil våre Principal Engineers Audun Fauchald Strand og Truls Jørgensen fortelle om vår tekniske retning innen data, kultur, teknikker og veien ut av legacy. Arrangementet er gratis og åpent for alle. Vi sees!",
+        "digital": true,
+        "link": "https://www.meetup.com/nav-fagkveld/events/274920255/",
+        "photo": "https://www.dagbladet.no/files/2021/01/15/kode24-kalender-nav-1.png"
+    },
+    {
+        "arrangedBy": "Javazone",
+        "name": "Javazone 2021",
+        "startDate": "09-08-2021",
+        "endDate": "09-09-2021",
+        "description" : "De siste årene har vi i NAV IT gjort store endringer i måten vi jobber på og oppnådd gode resultater. Det har vi gjort ved å blant annet øke antall produksjonsettinger, flere faste ansatte og å jobbe i autonome og tverrfaglige team. Hvor går veien videre nå? IT-avdelingen i NAV leverer løsninger til 2.8 millioner mennesker som vi følger gjennom hele livet. For å kunne tilby brukerorienterte tjenester i ulike livsfaser, bygger vi arbeids- og velferdsløsningene for fremtiden – for deg og dine, for NAV og for samfunnet vårt. I denne digitale faglunsjen vil våre Principal Engineers Audun Fauchald Strand og Truls Jørgensen fortelle om vår tekniske retning innen data, kultur, teknikker og veien ut av legacy. Arrangementet er gratis og åpent for alle. Vi sees!",
+        "digital": false,
+        "link": "https://2021.javazone.no/#/",
+        "photo": "https://www.dagbladet.no/files/2021/01/15/kode24-javasone-2.png"
+    },
+    {
+        "arrangedBy": "Den norske dataforening",
+        "name": "SW2021",
+        "startDate": "09-08-2021",
+        "endDate": "09-09-2021",
+        "description" : "Smittevernreglene må overholdes. Vi planlegger derfor med et heldigitalt arrangement. Du kan delta fra hjemmekontoret, jobben eller på farten. Dersom situasjonen tillater det vil våre faggrupper invitere til mindre fysiske møteplasser flere steder i landet. For første gang er alle Dataforeningens distrikts- og lokalavdelinger med på arrangørsiden. Det blir innlegg fra 8 byer i Norge. Resultatene fra SW2021 inngår som en viktig del av grunnlaget for Dataforeningens publikasjon: «Digitalt samfunn med mennesker i sentrum: Er vi på rett vei?»",
+        "digital": true,
+        "link": "https://event.dnd.no/software2021/",
+        "photo": "https://www.dagbladet.no/files/2021/01/15/kode24-sw2021-1.png"
+    }                
+]
