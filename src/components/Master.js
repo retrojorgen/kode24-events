@@ -1,6 +1,5 @@
-import React, { Fragment, Component } from "react";
+import React, { Component } from "react";
 import styled, { keyframes } from "styled-components";
-import { getAds, getAdsByTags } from "../api/FileSystem";
 import { format, register } from "timeago.js";
 import norwegian from "./norwegian";
 import isLight from "./toggles";
@@ -74,131 +73,6 @@ const PageWrapper = styled.div`
     display: none;
     &.opened {
       display: block;
-    }
-  }
-`;
-
-const ExpandButton = styled.button`
-  position: relative;
-  width: 100%;
-  text-transform: uppercase;
-  color: white;
-  z-index: 400;
-  padding: 17px;
-  margin-bottom: 20px;
-  border-radius: 2px;
-  background: linear-gradient(45deg, #c431e3, #ff8d00);
-  transition: all 0.1s linear;
-  font-size: 1em;
-  border: 0;
-  cursor: pointer;
-  &.opened {
-    opacity: 0.6;
-  }
-  &:hover {
-    background: linear-gradient(45deg, #a51ac2, red);
-  }
-  @media (min-width: 700px) {
-    display: none;
-  }
-  &:after {
-    content: "⚙️";
-    font-size: 19px;
-    display: inline-block;
-    position: absolute;
-    right: 10px;
-    top: 12px;
-  }
-`;
-
-const MenuWrapper = styled.div`
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #111111;
-  z-index: 1000;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-  width: 240px;
-  flex: 0 0;
-
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  transform: translateX(100%);
-  transition: all 0.1s linear;
-  &.opened {
-    transform: translateX(0);
-  }
-
-  @media (min-width: 700px) {
-    position: relative;
-    width: auto;
-    height: auto;
-    background-color: #111111;
-    width: 300px;
-    transform: translateX(0);
-    flex: 0 1 300px;
-    border-radius: 10px;
-  }
-
-  .listing-search {
-    input {
-      background: transparent;
-      border: 0;
-      padding: 10px;
-      border-radius: 10px;
-      font-size: 20px;
-      color: white;
-
-      background-color: #191919;
-      width: 100%;
-      outline: none;
-      &:focus {
-        background-color: black;
-      }
-    }
-  }
-
-  h4 {
-    margin-bottom: 10px;
-    font-size: 20px;
-    margin-top: 26px;
-  }
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    li {
-      margin-bottom: 4px;
-      display: flex;
-      cursor: pointer;
-      &.disabled {
-        opacity: 0.6;
-      }
-      &:hover {
-        background: rgba(255, 255, 255, 0.1);
-      }
-      input {
-        margin-right: 6px;
-        margin-bottom: 0;
-        margin-top: 6px;
-      }
-      label {
-        display: flex;
-        width: 100%;
-      }
-      .property-name {
-        display: block;
-        font-weight: normal;
-        &::first-letter {
-          text-transform: uppercase;
-        }
-        margin-right: 6px;
-      }
     }
   }
 `;
@@ -347,32 +221,6 @@ const ContentListing = styled.div`
   }
 `;
 
-const JobbMenu = styled.div`
-  display: flex;
-  margin-bottom: 20px;
-  flex-direction: column;
-  @media (min-width: 700px) {
-    flex-direction: row;
-  }
-  a {
-    display: inline-block;
-    padding: 10px 22px;
-    background: #111;
-    border-radius: 10px;
-
-    text-align: center;
-    color: white !important;
-
-    @media (min-width: 700px) {
-      text-align: left;
-      margin-right: 20px;
-    }
-    &.action {
-      background-color: var(--kode24-purple);
-    }
-  }
-`;
-
 const CompanyImage = styled.div`
   width: 70px;
   height: 70px;
@@ -444,7 +292,11 @@ class Master extends Component {
                         <h2>{event.name}</h2>
                         <div className="date-and-format">
                           <time className="time">
-                            <img src={calendarIcon} className="icon" />
+                            <img
+                              src={calendarIcon}
+                              className="icon"
+                              alt="icon"
+                            />
                             {event.startDateFormatted}
                           </time>
                           {event.digital && (
