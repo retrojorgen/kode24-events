@@ -301,7 +301,7 @@ class Master extends Component {
               href="https://docs.google.com/forms/d/e/1FAIpQLScU7RouC4P8eCSWs7-0TfBv7GjQWWXsWol5FCY4YTsJ8LapyA/viewform?fbclid=IwAR0OLNR9eSxwxVFj1Btdux5umE_GPZB_gxHXK6KzXDMon3YGsubSfmGDydE"
               class="action"
             >
-              ✨ Legg inn ditt event
+              <span role="img">✨</span> Legg inn ditt event
             </a>
           </JobbMenu>
           <PageWrapper>
