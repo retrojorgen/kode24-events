@@ -4,7 +4,6 @@ import { format, register } from "timeago.js";
 import norwegian from "./norwegian";
 import isLight from "./toggles";
 import eventsFromAPI from "./events.json";
-import calendarIcon from "../images/calendar.svg";
 
 function prettyDateString(dateObject) {
   return `${dateObject.getDate().toString().padStart(2, "0")}.
@@ -85,7 +84,7 @@ const ContentListing = styled.div`
   justify-content: flex-start;
   width: 100%;
   @media (min-width: 700px) {
-    padding: 0 20px;
+    padding: 0 0;
   }
   .listing-info h1 {
     text-align: center;
@@ -253,6 +252,32 @@ const CompanyImage = styled.div`
   }
 `;
 
+const JobbMenu = styled.div`
+  display: flex;
+  margin-bottom: 20px;
+  flex-direction: column;
+  @media (min-width: 700px) {
+    flex-direction: row;
+  }
+  a {
+    display: inline-block;
+    padding: 10px 22px;
+    background: #111;
+    border-radius: 10px;
+
+    text-align: center;
+    color: white !important;
+
+    @media (min-width: 700px) {
+      text-align: left;
+      margin-right: 10px;
+    }
+    &.action {
+      background-color: var(--kode24-purple);
+    }
+  }
+`;
+
 class Master extends Component {
   state = {
     hasLoaded: false,
@@ -271,6 +296,14 @@ class Master extends Component {
           <div className="listing-info">
             <h1>{events.length} Kommende arrangementer:</h1>
           </div>
+          <JobbMenu>
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLScU7RouC4P8eCSWs7-0TfBv7GjQWWXsWol5FCY4YTsJ8LapyA/viewform?fbclid=IwAR0OLNR9eSxwxVFj1Btdux5umE_GPZB_gxHXK6KzXDMon3YGsubSfmGDydE"
+              class="action"
+            >
+              ✨ Legg inn ditt event
+            </a>
+          </JobbMenu>
           <PageWrapper>
             <div
               className={`close-block ${
@@ -293,7 +326,7 @@ class Master extends Component {
                         <div className="date-and-format">
                           <time className="time">
                             <img
-                              src={calendarIcon}
+                              src="https://www.dagbladet.no/files/2021/01/18/kode24-calendar.png"
                               className="icon"
                               alt="icon"
                             />
