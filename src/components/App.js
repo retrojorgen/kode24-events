@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import Master from '../components/Master';
-import { injectGlobal } from 'styled-components';
+import React from "react";
+import Master from "../components/Master";
+import { createGlobalStyle } from "styled-components";
 
-injectGlobal`
+const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,400i,500,500i|IBM+Plex+Sans:400,400i,500,500i');
   html {
     height: 100%;
@@ -23,14 +23,15 @@ injectGlobal`
     font-family: inherit;
   }
 
-`
+`;
 
-class App extends Component {
-  render() {
-    return (
+const App = () => {
+  return (
+    <>
+      <GlobalStyle />
       <Master />
-    );
-  }
-}
+    </>
+  );
+};
 
 export default App;

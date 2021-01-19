@@ -1,5 +1,6 @@
-import React, { Component } from "react";
+import React, { Component, useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
+import { GoogleSpreadsheet } from "google-spreadsheet";
 import { format, register } from "timeago.js";
 import norwegian from "./norwegian";
 import isLight from "./toggles";
@@ -18,8 +19,6 @@ eventsFromAPI.map((event) => {
   if (event.endDate) event.endDate = new Date(event.endDate);
   return event;
 });
-
-console.log(eventsFromAPI);
 
 register("NB-no", norwegian);
 
@@ -278,83 +277,93 @@ const JobbMenu = styled.div`
   }
 `;
 
-class Master extends Component {
-  state = {
-    hasLoaded: false,
-    events: [],
-  };
+const Events = () => {
+  const [hasLoaded, setHasLoaded] = useState(false);
+  const [events, setEvents] = useState([]);
 
-  componentDidMount() {
-    this.setState({ events: eventsFromAPI, hasLoaded: true });
-  }
+  useEffect(() => {
+    setEvents(eventsFromAPI);
+    setHasLoaded(true);
 
-  render() {
-    let { events, hasLoaded } = this.state;
-    if (hasLoaded) {
-      return (
-        <div>
-          <div className="listing-info">
-            <h1>{events.length} Kommende arrangementer:</h1>
-          </div>
-          <JobbMenu>
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLScU7RouC4P8eCSWs7-0TfBv7GjQWWXsWol5FCY4YTsJ8LapyA/viewform?fbclid=IwAR0OLNR9eSxwxVFj1Btdux5umE_GPZB_gxHXK6KzXDMon3YGsubSfmGDydE"
-              class="action"
-            >
-              <span role="img" aria-label="twinkle">
-                ✨
-              </span>{" "}
-              Legg inn ditt event
-            </a>
-          </JobbMenu>
-          <PageWrapper>
-            <div
-              className={`close-block ${
-                this.state.filterIsOpen ? "opened" : ""
-              }`}
-              onClick={() => this.toggleFilter()}
-            />
-            <ContentListing>
-              <ul className="listings">
-                {events.map((event, key) => (
-                  <li key={key}>
-                    <a target="_blank" href={event.link}>
-                      <CompanyImage
-                        className="listing-company-image"
-                        background={event.photo}
-                      ></CompanyImage>
-                      <div className="listing-info">
-                        <p>{event.arrangedBy}</p>
-                        <h2>{event.name}</h2>
-                        <div className="date-and-format">
-                          <time className="time">
-                            <img
-                              src="https://www.dagbladet.no/files/2021/01/18/kode24-calendar.png"
-                              className="icon"
-                              alt="icon"
-                            />
-                            {event.startDateFormatted}
-                          </time>
-                          {event.digital && (
-                            <span className="pill digital">Digitalt</span>
-                          )}
-                          {!event.digital && (
-                            <span className="pill physical">Fysisk</span>
-                          )}
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </ContentListing>
-          </PageWrapper>
+    const getGoogleSheet = async () => {
+      //Form Responses 1
+      const SHEET_ID = process.env.REACT_APP_SHEET_ID;
+      console.log(SHEET_ID);
+      const doc = new GoogleSpreadsheet(SHEET_ID);
+      await doc.useServiceAccountAuth({
+        private_key: process.env.REACT_APP_GOOGLE_PRIVATE_KEY.replace(
+          /\\n/gm,
+          "\n"
+        ),
+        client_email: process.env.REACT_APP_GOOGLE_SERVICE_ACCOUNT_EMAIL,
+      });
+
+      await doc.loadInfo();
+      const sheet = await doc.sheetsByIndex[0];
+      const rows = await sheet.getRows();
+      console.log(rows);
+    };
+    getGoogleSheet();
+  }, []);
+
+  if (hasLoaded)
+    return (
+      <div>
+        <div className="listing-info">
+          <h1>{events.length} Kommende arrangementer:</h1>
         </div>
-      );
-    } else {
-      return <Spinner />;
-    }
+        <JobbMenu>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLScU7RouC4P8eCSWs7-0TfBv7GjQWWXsWol5FCY4YTsJ8LapyA/viewform?fbclid=IwAR0OLNR9eSxwxVFj1Btdux5umE_GPZB_gxHXK6KzXDMon3YGsubSfmGDydE"
+            className="action"
+          >
+            <span role="img" aria-label="twinkle">
+              ✨
+            </span>{" "}
+            Legg inn ditt event
+          </a>
+        </JobbMenu>
+        <PageWrapper>
+          <ContentListing>
+            <ul className="listings">
+              {events.map((event, key) => (
+                <li key={key}>
+                  <a target="_blank" href={event.link}>
+                    <CompanyImage
+                      className="listing-company-image"
+                      background={event.photo}
+                    ></CompanyImage>
+                    <div className="listing-info">
+                      <p>{event.arrangedBy}</p>
+                      <h2>{event.name}</h2>
+                      <div className="date-and-format">
+                        <time className="time">
+                          <img
+                            src="https://www.dagbladet.no/files/2021/01/18/kode24-calendar.png"
+                            className="icon"
+                            alt="icon"
+                          />
+                          {event.startDateFormatted}
+                        </time>
+                        {event.digital && (
+                          <span className="pill digital">Digitalt</span>
+                        )}
+                        {!event.digital && (
+                          <span className="pill physical">Fysisk</span>
+                        )}
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </ContentListing>
+        </PageWrapper>
+      </div>
+    );
+  else {
+    return <Spinner />;
   }
-}
+};
 
-export default Master;
+export default Events;
