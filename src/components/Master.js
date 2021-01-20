@@ -1,7 +1,5 @@
-import React, { Component, useState, useEffect } from "react";
-import styled, { keyframes } from "styled-components";
+import React, { useState, useEffect } from "react";
 import { GoogleSpreadsheet } from "google-spreadsheet";
-import norwegian from "./norwegian";
 
 import Spinner from "./spinner";
 import JobbMenu from "./jobbmenu";

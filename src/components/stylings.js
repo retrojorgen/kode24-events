@@ -1,5 +1,4 @@
 import styled, { keyframes } from "styled-components";
-import isLight from "./toggles";
 
 const fadeIn = keyframes`
   from {
