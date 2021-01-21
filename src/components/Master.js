@@ -56,21 +56,21 @@ const Events = () => {
         .filter((row) => row["publisert"] === "ja")
         .map((row) => {
           let event = {};
-
-          event.startDate = new Date(`${row["Dato"]} ${row["Når på dagen"]}`);
+          let eventData = row._rawData;
+          event.startDate = new Date(`${eventData[1]} ${eventData[2]}`);
           event.startDateFormatted = prettyDateString(event.startDate);
-          event.arrangedBy = row["arrangør"];
-          event.name = row["Tittel"];
-          event.description = row["beskrivelse"];
-          event.link = row["lenke"];
-          event.photo = row["logo"];
+          event.arrangedBy = eventData[3];
+          event.name = eventData[3];
+          event.description = eventData[4];
+          event.link = eventData[7];
+          event.photo = eventData[8];
           if (event.photo.includes("drive.google.com/open")) {
             event.photo =
               "https://drive.google.com/thumbnail?authuser=0&sz=w320&id=" +
               event.photo.split("=")[1];
           }
-          event.digital = row["online/fysisk"] === "Online" ? true : false;
-          console.log(row["logo"]);
+          event.digital = eventData[6] === "Online" ? true : false;
+          event.location = !event.digital ? eventData[10] : "";
           return event;
         });
       events = sortEventsByDateAscending(events);
@@ -85,7 +85,7 @@ const Events = () => {
     return (
       <div>
         <div className="listing-info">
-          <h1>{events.length} Kommende arrangementer:</h1>
+          <h1>{events.length} kommende arrangementer:</h1>
         </div>
         <JobbMenu />
         <ContentListing>
