@@ -60,8 +60,8 @@ const Events = () => {
           event.startDate = new Date(`${eventData[1]} ${eventData[2]}`);
           event.startDateFormatted = prettyDateString(event.startDate);
           event.arrangedBy = eventData[3];
-          event.name = eventData[3];
-          event.description = eventData[4];
+          event.name = eventData[4];
+          event.description = eventData[5];
           event.link = eventData[7];
           event.photo = eventData[8];
           if (event.photo.includes("drive.google.com/open")) {
