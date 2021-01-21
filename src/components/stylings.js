@@ -44,7 +44,7 @@ const ContentListing = styled.div`
     font-weight: 500;
   }
   .description {
-    color: #777777;
+    color: var(--text-color-fade);
   }
   .listings {
     list-style: none;

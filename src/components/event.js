@@ -8,12 +8,11 @@ const EventWrapper = styled.a`
   align-items: stretch;
   margin-bottom: 10px;
   cursor: pointer;
-  background-color: #171717;
+  background-color: var(--card-background);
   border-radius: 10px;
-  color: white;
   text-decoration: none;
   &:hover {
-    background-color: #111111;
+    background-color: var(--card-background-hover);
   }
   h2,
   p {
@@ -30,16 +29,20 @@ const EventWrapper = styled.a`
     letter-spacing: 0;
     font-size: 1.1em;
     margin-bottom: 4px;
-
+    color: var(--text-color);
     @media (min-width: 700px) {
       font-size: 19px;
       letter-spacing: 1px;
     }
   }
+  .description {
+      var(--text-color-more-fade);
+  }
   p {
     font-size: 12px;
     opacity: 0.8;
     padding-bottom: 1px;
+    color: var(--text-color-fade);
 
     @media (min-width: 700px) {
       font-size: 15px;
@@ -58,6 +61,7 @@ const EventWrapper = styled.a`
     padding: 4px 14px;
     font-size: 10px;
     margin-left: 10px;
+    color: var(--text-color-always-white) !important;
     &.physical {
       background-color: var(--kode24-pink-dark);
     }
@@ -68,7 +72,6 @@ const EventWrapper = styled.a`
     display: inline-block;
     margin-right: 10px;
     margin-right: 5px;
-    color: #a0a0a0;
     transform: translateY(2px);
   }
   .time {
@@ -76,9 +79,8 @@ const EventWrapper = styled.a`
     font-size: 10px;
 
     display: block;
-    color: #a0a0a0;
     font-size: 15px;
-
+    color: var(--text-color-fade);
     text-align: left;
   }
 `;

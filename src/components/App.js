@@ -14,8 +14,22 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Plex Sans', sans-serif;
     height: 100%;
     width: 100%;
-    color: #D4D4D4;
+    
     background-color: #1e1e1e;
+    --card-background: #171717;
+    --card-background-hover: #111111;
+    --text-color: white;
+    --text-color-fade: rgb(160, 160, 160);
+    --text-color-more-fade: rgb(119, 119, 119);
+    --text-color-always-white: white;
+    color: var(--text-color);
+    &.light {
+      --card-background: #cbcbcb;
+      --card-background-hover: #eae2e2;
+      --text-color: black;
+      --text-color-fade: rgb(82 82 82);
+      --text-color-more-fade: #4b4b4b;
+    }
   }
 
   * {
