@@ -99,7 +99,7 @@ export default (props) => (
             className="icon"
             alt="icon"
           />
-          {props.event.startDateFormatted}
+          {props.event.startDateFormatted} - {props.event.timeFormatted}
         </time>
         {props.event.digital && <span className="pill digital">Digitalt</span>}
         {!props.event.digital && <span className="pill physical">Fysisk</span>}

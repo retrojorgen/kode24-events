@@ -15,6 +15,13 @@ function prettyDateString(dateObject) {
     .padStart(2, "0")}.${dateObject.getFullYear()}`;
 }
 
+function prettyTimeString(dateObject) {
+  return `${dateObject
+    .getHours()
+    .toString()
+    .padStart(2, "0")}:${dateObject.getMinutes().toString().padStart(2, "0")}`;
+}
+
 function sortEventsByDateAscending(events) {
   let newEvents = [...events];
   newEvents.sort(function (a, b) {
@@ -59,6 +66,7 @@ const Events = () => {
           let eventData = row._rawData;
           event.startDate = new Date(`${eventData[1]} ${eventData[2]}`);
           event.startDateFormatted = prettyDateString(event.startDate);
+          event.timeFormatted = prettyTimeString(event.startDate);
           event.arrangedBy = eventData[3];
           event.name = eventData[4];
           event.description = eventData[5];
