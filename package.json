@@ -4,6 +4,7 @@
   "private": true,
   "proxy": "http://localhost:5000",
   "dependencies": {
+    "axios": "^0.21.1",
     "env": "^0.0.2",
     "google-spreadsheet": "^3.1.15",
     "react": "^16.13.1",

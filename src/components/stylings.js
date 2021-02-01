@@ -46,6 +46,12 @@ const ContentListing = styled.div`
   .description {
     color: var(--text-color-fade);
   }
+  h2 {
+    width: 100%;
+  }
+  .month {
+    width: 100%;
+  }
   .listings {
     list-style: none;
     padding: 0;

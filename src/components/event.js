@@ -11,8 +11,16 @@ const EventWrapper = styled.a`
   background-color: var(--card-background);
   border-radius: 10px;
   text-decoration: none;
+  transition: all 0.25s ease-in-out;
   &:hover {
     background-color: var(--card-background-hover);
+    transform: scale(1.01);
+  }
+  &.premium {
+    background: linear-gradient(45deg, var(--card-highlight-gradient-left), var(--card-highlight-gradient-right));
+    &:hover {
+      filter: brightness(1.2);
+    } 
   }
   h2,
   p {
@@ -86,7 +94,11 @@ const EventWrapper = styled.a`
 `;
 
 export default (props) => (
-  <EventWrapper target="_blank" href={props.event.link}>
+  <EventWrapper
+    target="_blank"
+    href={props.event.link}
+    className={`${props.premium ? "premium" : ""}`}
+  >
     <CompanyImage background={props.event.photo} />
     <div className="listing-info">
       <p>{props.event.arrangedBy}</p>
