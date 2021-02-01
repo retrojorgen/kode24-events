@@ -14,8 +14,9 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Plex Sans', sans-serif;
     height: 100%;
     width: 100%;
-    
     background-color: #1e1e1e;
+    --card-highlight-gradient-left: #351c6a;
+    --card-highlight-gradient-right: #77138b;
     --card-background: #171717;
     --card-background-hover: #111111;
     --text-color: white;
@@ -24,6 +25,8 @@ const GlobalStyle = createGlobalStyle`
     --text-color-always-white: white;
     color: var(--text-color);
     &.light {
+      --card-highlight-gradient-left: #d7c4ff;
+      --card-highlight-gradient-right: #f0a6fc;
       --card-background: #cbcbcb;
       --card-background-hover: #eae2e2;
       --text-color: black;
