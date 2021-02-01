@@ -47,7 +47,8 @@ const Events = () => {
           <h1>{eventsArray.length} kommende arrangementer:</h1>
         </div>
         <JobbMenu />
-        {premiumEvents.length && (
+
+        {premiumEvents.length > 0 && (
           <ContentListing>
             <h2>Sponset arrangement</h2>
             <ul className="listings">
