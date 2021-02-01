@@ -47,16 +47,18 @@ const Events = () => {
           <h1>{eventsArray.length} kommende arrangementer:</h1>
         </div>
         <JobbMenu />
-        <ContentListing>
-          <h2>Sponset arrangement</h2>
-          <ul className="listings">
-            {premiumEvents.map((event, index) => (
-              <li key={index}>
-                <Event premium={true} event={event} />
-              </li>
-            ))}
-          </ul>
-        </ContentListing>
+        {premiumEvents.length && (
+          <ContentListing>
+            <h2>Sponset arrangement</h2>
+            <ul className="listings">
+              {premiumEvents.map((event, index) => (
+                <li key={index}>
+                  <Event premium={true} event={event} />
+                </li>
+              ))}
+            </ul>
+          </ContentListing>
+        )}
         <ContentListing>
           {Array.from(events.keys()).map((value, key) => (
             <div className="month" key={key}>
