@@ -23,7 +23,6 @@ const Events = () => {
   const [events, setEvents] = useState(new Map());
   const [eventsArray, setEventsArray] = useState([]);
   const [premiumEvents, setPremiumEvents] = useState([]);
-  const [previousEvents, setPreviousEvents] = useState([]);
   useEffect(() => {
     const getGoogleSheet = async () => {
       const sheets = await getSheet();
@@ -43,7 +42,6 @@ const Events = () => {
         console.log(value, key);
       });
       setEventsArray(sheets.upcomingEvents);
-      setPreviousEvents(sheets.previousEvents);
       setPremiumEvents(sheets.premiumEvents);
       setHasLoaded(true);
     };
