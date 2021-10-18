@@ -1,4 +1,4 @@
-const getMonth = (numericMonth) => {
+export const getMonth = (numericMonth) => {
   const months = [
     "januar",
     "februar",
@@ -15,5 +15,3 @@ const getMonth = (numericMonth) => {
   ];
   return months[numericMonth];
 };
-
-export { getMonth };
