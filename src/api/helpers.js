@@ -1,6 +1,7 @@
 import axios from "axios";
 axios.defaults.withCredentials = true;
-const apiUrl = "https://functions.kode24.no/api/";
+//const apiUrl = "https://functions.kode24.no/api/";
+const apiUrl = "http://localhost:5000/api/";
 
 async function makeRequest(api, apiAction, method, data) {
   const url = `${apiUrl}${api}${apiAction}`;

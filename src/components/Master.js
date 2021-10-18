@@ -2,11 +2,21 @@ import React, { useState, useEffect } from "react";
 
 import Spinner from "./spinner";
 import JobbMenu from "./jobbmenu";
-import { ContentListing, OpacityWrapper } from "./stylings";
+import { ContentListing } from "./stylings";
+import styled from "styled-components";
 
 import Event from "./event";
 import { getSheet } from "../api/sheets";
 import { getMonth } from "./months";
+
+const EventsList = styled.div`
+  h1 {
+    text-align: center;
+    font-family: var(--fontMono);
+    font-weight: 500;
+    color: var(--v2-card-headline-color);
+  }
+`;
 
 const Events = () => {
   const [hasLoaded, setHasLoaded] = useState(false);
@@ -42,7 +52,7 @@ const Events = () => {
 
   if (hasLoaded) {
     return (
-      <div>
+      <EventsList>
         <div className="listing-info">
           <h1>{eventsArray.length} kommende arrangementer:</h1>
         </div>
@@ -74,21 +84,7 @@ const Events = () => {
             </div>
           ))}
         </ContentListing>
-        <OpacityWrapper>
-          <div className="listing-info">
-            <h1>Tidligere arrangementer:</h1>
-          </div>
-          <ContentListing>
-            <ul className="listings">
-              {previousEvents.map((event, key) => (
-                <li key={key}>
-                  <Event event={event} />
-                </li>
-              ))}
-            </ul>
-          </ContentListing>
-        </OpacityWrapper>
-      </div>
+      </EventsList>
     );
   } else {
     return <Spinner />;

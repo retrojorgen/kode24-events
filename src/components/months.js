@@ -9,6 +9,7 @@ const getMonth = (numericMonth) => {
     "juli",
     "august",
     "september",
+    "oktober",
     "november",
     "desember",
   ];

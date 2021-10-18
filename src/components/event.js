@@ -2,77 +2,64 @@ import React from "react";
 import styled from "styled-components";
 import CompanyImage from "./companyImage";
 const EventWrapper = styled.a`
-  padding: 20px;
+  padding: 1.25rem;
+  border-radius: 10px;
+  background: var(--v2-card-background);
   display: flex;
   width: 100%;
+  -webkit-box-align: stretch;
   align-items: stretch;
   margin-bottom: 10px;
   cursor: pointer;
-  background-color: var(--card-background);
-  border-radius: 10px;
-  text-decoration: none;
-  transition: all 0.25s ease-in-out;
-  &:hover {
-    background-color: var(--card-background-hover);
-    transform: scale(1.01);
-  }
   &.premium {
-    background: linear-gradient(45deg, var(--card-highlight-gradient-left), var(--card-highlight-gradient-right));
+    background: linear-gradient(
+      45deg,
+      var(--card-highlight-gradient-left),
+      var(--card-highlight-gradient-right)
+    );
     &:hover {
       filter: brightness(1.2);
-    } 
-  }
-  h2,
-  p {
-    margin: 0;
-    padding: 0;
-    @media (min-width: 700px) {
-      display: block;
     }
+  }
+  h3 {
+    background-color: transparent;
+    padding: 0px;
+    margin-bottom: 0.4rem;
+    color: var(--v2-card-paragraph-color);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin-top: 0px;
+    letter-spacing: 0.1em;
+    border-radius: 10px;
+    display: inline-block;
+    font-weight: 400;
+    font-family: var(--fontMono);
   }
   h2 {
-    margin: 0;
-    padding: 0;
+    margin: 0px 0px 0.4rem 0;
+    padding: 0px;
     font-weight: normal;
-    letter-spacing: 0;
-    font-size: 1.1em;
-    margin-bottom: 4px;
-    color: var(--text-color);
-    @media (min-width: 700px) {
-      font-size: 19px;
-      letter-spacing: 1px;
+    letter-spacing: 0px;
+    font-size: 1.1rem;
+    color: var(--v2-card-headline-color);
+    @media screen and (min-width: 700px) {
+      font-size: 1.4rem;
     }
-  }
-  .description {
-      var(--text-color-more-fade);
   }
   p {
-    font-size: 12px;
-    opacity: 0.8;
-    padding-bottom: 1px;
-    color: var(--text-color-fade);
-
-    @media (min-width: 700px) {
-      font-size: 15px;
-      display: block;
-    }
+    margin: 0px 0px 1rem 0;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
   }
-  .date-and-format {
-    display: flex;
-    align-items: center;
-    margin-bottom: 2px;
-    margin-top: 10px;
-  }
-  .pill {
-    border-radius: 20px;
-    background-color: black;
-    padding: 4px 14px;
-    font-size: 10px;
-    margin-left: 10px;
-    color: var(--text-color-always-white) !important;
-    &.physical {
-      background-color: var(--kode24-pink-dark);
-    }
+  .pill,
+  .time {
+    display: inline-block;
+    background-color: var(--v2-card-background-level-2);
+    padding: 4px 10px;
+    border-radius: 10px;
+    margin-right: 0.6rem;
+    margin-bottom: 0.6rem;
+    font-size: 0.8rem;
   }
   .icon {
     width: 16px;
@@ -81,15 +68,6 @@ const EventWrapper = styled.a`
     margin-right: 10px;
     margin-right: 5px;
     transform: translateY(2px);
-  }
-  .time {
-    text-transform: uppercase;
-    font-size: 10px;
-
-    display: block;
-    font-size: 15px;
-    color: var(--text-color-fade);
-    text-align: left;
   }
 `;
 
@@ -101,7 +79,7 @@ export default (props) => (
   >
     <CompanyImage background={props.event.photo} />
     <div className="listing-info">
-      <p>{props.event.arrangedBy}</p>
+      <h3>{props.event.arrangedBy}</h3>
       <h2>{props.event.name}</h2>
       <p className="description">{props.event.description}</p>
       <div className="date-and-format">

@@ -8,27 +8,17 @@ const JobbMenuWrapper = styled.div`
     flex-direction: row;
   }
   a {
-    display: inline-block;
-    padding: 10px 22px;
-    background: #111;
-    border-radius: 10px;
-
-    text-align: center;
-    color: white !important;
-
-    @media (min-width: 700px) {
-      text-align: left;
-      margin-right: 10px;
-    }
-    &.action {
-      background-color: var(--kode24-purple);
-    }
+    text-decoration: none;
+    border: 0;
   }
 `;
 
 export default () => (
   <JobbMenuWrapper>
-    <a href="https://forms.gle/TezisQABkb8ZfWGi7" className="action">
+    <a
+      href="https://forms.gle/TezisQABkb8ZfWGi7"
+      className="action button job-ad-cta"
+    >
       <span role="img" aria-label="twinkle">
         ✨
       </span>{" "}
