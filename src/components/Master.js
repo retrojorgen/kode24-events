@@ -16,6 +16,9 @@ const EventsList = styled.div`
     font-weight: 500;
     color: var(--v2-card-headline-color);
   }
+  h2 {
+    color: var(--v2-card-headline-color);
+  }
 `;
 
 const Events = () => {

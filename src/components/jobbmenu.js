@@ -10,6 +10,9 @@ const JobbMenuWrapper = styled.div`
   a {
     text-decoration: none;
     border: 0;
+    &.action {
+      color: var(--v2-card-always-white);
+    }
   }
 `;
 
